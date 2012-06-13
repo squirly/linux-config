@@ -1,0 +1,7 @@
+Run the following commands to setup
+
+  mkdir ~/repos
+  cd ~/repos
+  git clone git://github.com/squirly/dotfiles.git
+  cd dotfiles
+  ./install
