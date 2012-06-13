@@ -2,7 +2,8 @@
 
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-rm "~/.tmux.conf"
+rm ${HOME}/.tmux.conf
 ln -s ${DIR}/tmux.conf ${HOME}/.tmux.conf
 
+mkdir ${HOME}/Templates/
 ln -s ${DIR}/Templates/* ${HOME}/Templates/
