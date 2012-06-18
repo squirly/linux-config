@@ -1,0 +1,5 @@
+==Terminal==
+  sudo add-apt-repository ppa:flozz/flozz
+  sudo apt-get update
+  sudo apt-get install nautilus-terminal
+  nautilus -q && nautilus & exit
