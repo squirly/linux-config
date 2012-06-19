@@ -3,7 +3,7 @@
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 for file in `dir ${DIR}/dot-home`; do
-  if [ ! -a ${HOME}/.$file ]; then
+  if [ -a ${HOME}/.$file ]; then
     rm ${HOME}/.$file
   fi
   ln -s ${DIR}/dot-home/$file ${HOME}/.$file
