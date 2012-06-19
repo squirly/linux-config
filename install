@@ -2,8 +2,14 @@
 
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-rm ${HOME}/.tmux.conf
-ln -s ${DIR}/tmux.conf ${HOME}/.tmux.conf
+for file in `dir ${DIR}/dot-home`; do
+  if [ ! -a ${HOME}/.$file ]; then
+    rm ${HOME}/.$file
+  fi
+  ln -s ${DIR}/dot-home/$file ${HOME}/.$file
+done
 
-mkdir ${HOME}/Templates/
+if [ ! -d ${HOME}/Templates/ ]; then
+  mkdir ${HOME}/Templates/
+fi
 ln -s ${DIR}/Templates/* ${HOME}/Templates/

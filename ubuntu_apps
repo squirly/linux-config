@@ -1,0 +1,16 @@
+base = {
+  'packages' : [
+    git-core,
+  ]
+}
+
+desktop = {
+  'ppa': [flozz/flozz],
+  'packages' : [
+    chromium,
+    gnome-do,
+    parcellite,
+    nautilus-open-terminal,
+    nautilus-terminal,
+  ]
+}
