@@ -98,11 +98,21 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+alias cdy='SHOW_DIR=true'
+alias cdn='SHOW_DIR=false'
+SHOW_DIR=false
+function list_dir() {
+  if [ $SHOW_DIR = true ]; then
+    echo "----------"
+    ls -C --color=auto
+    printf ' '
+  fi
+}
+
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2>/dev/null) || return
   echo "(git:"${ref#refs/heads/}")"
 }
-
-PS1+="\$(parse_git_branch)"
+PS1="\$(list_dir)"$PS1"\$(parse_git_branch)"
 
 PS1+='\$ '

@@ -7,6 +7,7 @@ base = {
 desktop = {
   'ppa': [flozz/flozz],
   'packages' : [
+    ubuntu-restricted-extras,
     chromium,
     gnome-do,
     parcellite,
