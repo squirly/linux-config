@@ -100,9 +100,9 @@ fi
 
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2>/dev/null) || return
-  echo "("${ref#refs/heads/}")"
+  echo "(git:"${ref#refs/heads/}")"
 }
 
-PS1+=" $(parse_git_branch)"
+PS1+="\$(parse_git_branch)"
 
 PS1+='\$ '
