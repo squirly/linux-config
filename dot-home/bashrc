@@ -116,3 +116,6 @@ function parse_git_branch {
 PS1="\$(list_dir)"$PS1"\$(parse_git_branch)"
 
 PS1+='\$ '
+
+
+alias "git-log=git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date=relative"
