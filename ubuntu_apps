@@ -4,6 +4,12 @@ base = {
   ]
 }
 
+server = {
+  'packages' : [
+    tmux,
+  ]
+}
+
 desktop = {
   'ppa': [flozz/flozz],
   'packages' : [
