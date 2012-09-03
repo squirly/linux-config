@@ -98,26 +98,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-alias cdy='SHOW_DIR=true'
-alias cdn='SHOW_DIR=false'
-SHOW_DIR=false
-function list_dir() {
-  if [ $SHOW_DIR = true ]; then
-    echo "----------"
-    ls -C --color=auto
-    printf ' '
-  fi
-}
-
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2>/dev/null) || return
   echo "(git:"${ref#refs/heads/}")"
 }
-PS1="\$(list_dir)"$PS1"\$(parse_git_branch)"
 
 ORANGE="\[\033[0;93m\]"
+DARK_ORANGE="\[\033[0;33m\]"
+BLUE="\[\033[0;94m\]"
+RED="\[\033[0;31m\]"
 NO_COLOUR="\[\033[0m\]"
 
-PS1="$ORANGE$PS1\$ $NO_COLOUR"
+PS1="$DARK_ORANGE$PS1 $BLUE\$(parse_git_branch)\n$RED\$ $NO_COLOUR"
+
+PS1="$ORANGE[\$(date +%k:%M:%S)] $PS1"
 
 alias "git-log=git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date=relative"
