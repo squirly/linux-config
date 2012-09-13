@@ -15,3 +15,4 @@ myManageHook = composeAll (
 startup :: X ()
 startup = do
           spawn "gnome-do"
+          spawn "ssh-add"
