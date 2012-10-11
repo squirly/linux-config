@@ -11,14 +11,19 @@ server = {
 }
 
 desktop = {
-  'ppa': [flozz/flozz],
+  'ppa': [
+    webupd8team/java
+  ],
   'packages' : [
     ubuntu-restricted-extras,
     python-pip,
-    chromium,
     gnome-do,
     parcellite,
-    nautilus-open-terminal,
-    nautilus-terminal,
+    gedit,
+    python-software-properties,
+    oracle-java8-installer
   ]
 }
+
+https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+Aptana Studio 3

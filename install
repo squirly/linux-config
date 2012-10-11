@@ -9,7 +9,7 @@ for file in `dir ${DIR}/dot-home`; do
   ln -s ${DIR}/dot-home/$file ${HOME}/.$file
 done
 
-if [ $1 != "server" ]; then
+if [ "$1" != "server" ]; then
   if [ ! -d ${HOME}/Templates/ ]; then
     mkdir ${HOME}/Templates/
   fi
