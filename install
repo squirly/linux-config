@@ -4,7 +4,7 @@ DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 for file in `dir ${DIR}/dot-home`; do
   if [ -a ${HOME}/.$file ]; then
-    rm ${HOME}/.$file
+    rm -r ${HOME}/.$file
   fi
   ln -s ${DIR}/dot-home/$file ${HOME}/.$file
 done

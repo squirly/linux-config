@@ -16,14 +16,16 @@ desktop = {
   ],
   'packages' : [
     ubuntu-restricted-extras,
+    xterm,
     python-pip,
     gnome-do,
     parcellite,
     gedit,
-    python-software-properties,
     oracle-java8-installer
+    nautilus-open-terminal,
+    sqliteman
   ]
 }
 
-https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-Aptana Studio 3
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#Aptana Studio 3
