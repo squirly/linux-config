@@ -2,6 +2,8 @@
 
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+ln -s ${DIR}/bin ${HOME}/bin
+
 for file in `dir ${DIR}/dot-home`; do
   if [ -a ${HOME}/.$file ]; then
     rm -r ${HOME}/.$file
