@@ -1,20 +1,27 @@
 import XMonad
-import XMonad.Config.Gnome
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.Run(spawnPipe)
 import XMonad.ManageHook
 
-main = xmonad gnomeConfig {
-    manageHook = myManageHook
-    , startupHook = startup
-    , terminal = "xterm"
-    , borderWidth = 1
-    , normalBorderColor  = "#000"
-    , focusedBorderColor = "#FF5721"
+main = do
+    xmproc <- spawnPipe "/usr/bin/xmobar /home/tyler/.xmonad/xmobar"
+
+    xmonad $ defaultConfig {
+          manageHook = manageDocks <+> myManageHook
+	, layoutHook = avoidStruts $ layoutHook defaultConfig
+        , startupHook = startup
+        , terminal = "xterm"
+        , borderWidth = 1
+        , normalBorderColor  = "#000"
+        , focusedBorderColor = "#FF5721"
     }
 
-myManageHook = composeAll (
-    [ manageHook gnomeConfig
-    , className =? "Do"       --> doFloat
-    ])
+myManageHook = composeAll [
+      manageHook defaultConfig
+    , className =? "Do"   --> doFloat
+    , className =? "Gimp" --> doFloat
+    , className =? "Vncviewer" --> doFloat
+    ]
 
 startup :: X ()
 startup = do
