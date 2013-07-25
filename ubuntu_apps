@@ -17,7 +17,6 @@ desktop = {
   'packages' : [
     ubuntu-restricted-extras,
     xterm,
-    python-pip,
     gnome-do,
     parcellite,
     gedit,

@@ -18,3 +18,6 @@ if [ "$1" != "server" ]; then
   fi
   ln -s ${DIR}/Templates/* ${HOME}/Templates/
 fi
+
+./dconf
+
