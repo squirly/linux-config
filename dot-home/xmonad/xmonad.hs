@@ -25,7 +25,7 @@ myManageHook = composeAll [
 
 startup :: X ()
 startup = do
-          spawn "gnome-keyring-daemon"
+          spawn "/usr/bin/gnome-keyring-daemon --start --components=pkcs11"
           spawn "gnome-screensaver"
           spawn "gnome-settings-daemon"
           spawn "gnome-power-manager"
