@@ -10,7 +10,9 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run Memory ["-t","Mem: <usedratio>%","--normal","green","--high","red"] 10
                     , Run Swap [] 10
     		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-                    , Run Battery ["-t", "<left>% (<timeleft>)"] 10
+                    , Run Battery ["-t", "<left>% (<timeleft>)<acstatus>", "--", 
+                                   "-c", "energy_full", "-f", "/sys/class/power_supply/AC0/online",
+                                   "-O", " <fc=green>Charging</fc>", "-o", ""] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
