@@ -27,10 +27,11 @@ case "$TERM" in
 esac
 
 # Some colours
-ORANGE="\[\033[0;93m\]"
-BLUE="\[\033[0;94m\]"
-RED="\[\033[0;31m\]"
-NO_COLOUR="\[\033[0m\]"
+ORANGE="\[\e[38;5;208m\]"
+TEAL="\[\e[38;5;85m\]"
+BLUE="\e[0;94m"
+RED="\[\e[0;31m\]"
+NO_COLOUR="\[\e[0m\]"
 
 force_color_prompt=yes
 
@@ -95,12 +96,16 @@ fi
 
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2>/dev/null) || return
-  echo "(git:"${ref#refs/heads/}")"
+  echo -e " $BLUE(git:"${ref#refs/heads/}")"
 }
 
-PS1="$DARK_ORANGE$PS1 $BLUE\$(parse_git_branch)\n$RED\$ $NO_COLOUR"
+function print_date {
+    B="\e[5m"
+    C="\e[25m"
+    echo -e "$(date +%k)$B:$C$(date +%M)$B:$C$(date +%S)"
+}
 
-PS1="$ORANGE[\$(date +%k:%M:%S)] $PS1"
+PS1="$ORANGE┌───┤$TEAL\$(print_date)$ORANGE├──┤$PS1\$(parse_git_branch)\n$ORANGE└─┤ $NO_COLOUR"
 
 export PATH=$PATH:~/bin
 
