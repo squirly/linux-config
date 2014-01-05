@@ -2,11 +2,13 @@ import XMonad
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.ManageHook
+import XMonad.Hooks.EwmhDesktops
+import Data.List
 
 main = do
     xmproc <- spawnPipe "/usr/bin/xmobar /home/tyler/.xmonad/xmobar"
 
-    xmonad $ defaultConfig {
+    xmonad $ ewmh defaultConfig {
           manageHook = manageDocks <+> myManageHook
 	, layoutHook = avoidStruts $ layoutHook defaultConfig
         , startupHook = startup
