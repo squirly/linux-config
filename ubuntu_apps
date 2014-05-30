@@ -1,30 +1,9 @@
-base = {
-  'packages' : [
-    git-core,
-  ]
-}
+#!/bin/bash
 
-server = {
-  'packages' : [
-    tmux,
-  ]
-}
+sudo add-apt-repository ppa:webupd8team/java
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update 
+sudo apt-get install git ubuntu-restricted-extras xterm gnome-do parcellite gedit oracle-java8-installer nautilus-open-terminal google-chrome-stable
 
-desktop = {
-  'ppa': [
-    webupd8team/java
-  ],
-  'packages' : [
-    ubuntu-restricted-extras,
-    xterm,
-    gnome-do,
-    parcellite,
-    gedit,
-    oracle-java8-installer
-    nautilus-open-terminal,
-    sqliteman
-  ]
-}
-
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#Aptana Studio 3
+# http://www.jetbrains.com/idea/download/
