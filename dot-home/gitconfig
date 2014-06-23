@@ -1,6 +1,9 @@
 [user]
-	name = Tyler Jones
-	email = tyler@squirly.ca
+name = Tyler Jones
+email = tyler@squirly.ca
 
 [push]
 default=nothing
+
+[core]
+excludesfile = ~/.gitignore_global
