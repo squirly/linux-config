@@ -10,6 +10,9 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# disable ibus for IntelliJ
+XMODIFIERS=idea.sh
+
 # fix window size
 shopt -s checkwinsize
 
