@@ -151,7 +151,7 @@ function refresh() {
 
 function git-fully-merged() {
   for B in $(git branch -r); do
-    if [[ $B =~ origin ]] && [[ $(git branch --contains $B) =~ master ]]; then
+    if [[ $B =~ origin ]] && [[ $(git branch --contains $B) =~ master ]] && [[ $(git rev-parse HEAD) != $(git rev-parse $B) ]]; then
       echo $B
     fi
   done
