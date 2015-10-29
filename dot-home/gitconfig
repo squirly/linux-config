@@ -2,11 +2,14 @@
 	name = Tyler Jones
 	email = tyler@squirly.ca
 [push]
-	default=current
+	default = current
 [core]
 	excludesfile = ~/.gitignore_global
+	autocrlf = input
 [alias]
     save = !sh -c 'BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout -b "$1" && git commit -am "$BRANCH" --allow-empty && git checkout "$BRANCH"' -
     load = !sh -c 'git checkout $1 && BRANCH=$(git show -s --format=%s HEAD) && git reset --soft $BRANCH && git checkout $BRANCH && git branch -d $1' -
 [color]
 	ui = true
+[diff]
+	tool = meld
