@@ -25,7 +25,7 @@ main = do
 
 myManageHook = composeAll [
       manageHook defaultConfig
-    , className =? "Do"   --> doFloat
+    , resource =? "synapse" --> doIgnore
     , className =? "Gimp" --> doFloat
     , className =? "Vncviewer" --> doFloat
     , (className ~=? "jetbrains-") <&&> (title ~=? "win") --> doIgnore
@@ -38,11 +38,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList [
 
 startup :: X ()
 startup = do
+          spawn "wmname LG3D"
           spawn "/usr/bin/gnome-keyring-daemon --start --components=pkcs11"
           spawn "xloadimage -onroot -fullscreen ~/.background"
           spawn "gnome-screensaver"
-          spawn "gnome-settings-daemon"
+          spawn "gnome-session"
+          spawn "unity-settings-daemon"
           spawn "~/.startup"
           spawn "ssh-add"
-          spawn "gnome-do"
-          spawn "parcellite"
+          spawn "synapse"
