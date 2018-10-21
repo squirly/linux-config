@@ -1,20 +1,19 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "xft:Open Sans:size=8"
        , bgColor = "black"
        , fgColor = "grey"
        , position = Top
        , lowerOnStart = True
-       , commands = [ Run Weather "CYVR" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
-                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
-                    , Run Network "wlan0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+       , commands = [ 
+                      Run Network "wlp58s0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%","--normal","green","--high","red"] 10
                     , Run Swap [] 10
-    		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run Battery ["-t", "<left>% (<timeleft>)<acstatus>", "--", 
                                    "-f", "/sys/class/power_supply/AC0/online",
                                    "-O", " <fc=green>Charging</fc>", "-o", ""] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "     }{%battery% | %cpu% | %memory% * %swap% | %eth0% - %wlan0% | <fc=#ee9a00>%date%</fc>| %CYVR%"
+       , template = "     }{%battery% | %cpu% | %memory% * %swap% | %wlp58s0% | <fc=#ee9a00>%date%</fc> "
        }
