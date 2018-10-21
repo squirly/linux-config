@@ -106,9 +106,7 @@ function parse_git_branch {
 }
 
 function print_date {
-    B="\e[5m"
-    C="\e[25m"
-    echo -e "$(date +%k)$B:$C$(date +%M)$B:$C$(date +%S)"
+    echo -e "$(date +%k):$(date +%M):$(date +%S)"
 }
 
 PS1="$ORANGE┌───┤$TEAL\$(print_date)$ORANGE├──┤$PS1\$(parse_git_branch)\n$ORANGE└─┤ $NO_COLOUR"
