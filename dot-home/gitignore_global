@@ -1,1 +1,6 @@
 atlassian-ide-plugin.xml
+.idea
+*.iml
+local.properties
+
+.vscode

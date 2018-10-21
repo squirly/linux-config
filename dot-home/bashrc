@@ -150,12 +150,8 @@ function refresh() {
   git stash pop
 }
 
-function git-fully-merged() {
-  for B in $(git branch -r); do
-    if [[ $B =~ origin ]] && [[ $(git branch --remote --contains $B) =~ origin/master ]] && [[ $(git rev-parse HEAD) != $(git rev-parse $B) ]]; then
-      echo $B
-    fi
-  done
-}
+alias git-fully-merged="git for-each-ref --format='%(refname:short)' refs/remotes/origin --merged=origin/master"
+
+alias git-merged="git for-each-ref --format='%(refname:short)' refs/heads --merged=origin/master"
 
 export PATH=~/bin:./bin:$PATH

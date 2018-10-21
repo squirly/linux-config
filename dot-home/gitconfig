@@ -1,9 +1,10 @@
 [user]
 	name = Tyler Jones
-	email = tyler@squirly.ca
+	email = tylerjones64@gmail.com
 [push]
 	default = current
 [core]
+	editor=nano
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 [alias]
