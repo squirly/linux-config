@@ -1,6 +1,6 @@
 XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 XTerm*faceName: Liberation Mono
-XTerm*faceSize: 10
+XTerm*faceSize: 11
 xTerm*borderWidth: 0
 
 ! Molokai theme
