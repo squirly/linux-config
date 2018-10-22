@@ -1,3 +1,0 @@
-[org/gnome/desktop/applications/terminal]
-exec='xterm'
-exec-arg=''
