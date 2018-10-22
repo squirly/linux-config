@@ -108,7 +108,7 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+l exec i3lock --color 475263
 
 set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
+set $inactive-bg-color   #0f141f
 set $text-color          #FF5721
 set $inactive-text-color #676e7d
 set $urgent-bg-color     #e53935
@@ -129,12 +129,12 @@ bar {
     font pango:monospace 9
 
 	colors {
-        background $bg-color
+        background $inactive-bg-color
         separator #757575
         #                  border             background         text
-        focused_workspace  $bg-color          $bg-color          $text-color
-        inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+        focused_workspace  $text-color        $bg-color          $text-color
+        inactive_workspace $bg-color          $inactive-bg-color $inactive-text-color
+        urgent_workspace   $urgent-bg-color   $urgent-bg-color   $inactive-text-color
     }
 }
 
