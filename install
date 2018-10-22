@@ -5,11 +5,14 @@ DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mkdir -p ${HOME}/bin
 ln -s ${DIR}/bin/* ${HOME}/bin/
 
+ln -s ${DIR}/dot-home/config/* ${HOME}/.config
+
 for file in `dir ${DIR}/dot-home`; do
-  if [ -a ${HOME}/.$file ]; then
-    rm -r ${HOME}/.$file
+  if [ -a ${HOME}/.${file} ]; then
+    echo "Skipping -r ${HOME}/.${file}, file exists"
+  else
+    ln -s ${DIR}/dot-home/${file} ${HOME}/.${file}
   fi
-  ln -s ${DIR}/dot-home/$file ${HOME}/.$file
 done
 
 if [ "$1" != "server" ]; then
