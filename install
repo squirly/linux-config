@@ -5,7 +5,10 @@ DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mkdir -p ${HOME}/bin
 ln -s ${DIR}/bin/* ${HOME}/bin/
 
+mkdir -p ${HOME}/.{config,bash_aliases.d}
+
 ln -s ${DIR}/dot-home/config/* ${HOME}/.config
+ln -s ${DIR}/dot-home/bash_aliases.d/* ${HOME}/.bash_aliases.d
 
 for file in `dir ${DIR}/dot-home`; do
   if [ -a ${HOME}/.${file} ]; then

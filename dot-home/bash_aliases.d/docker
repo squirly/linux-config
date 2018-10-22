@@ -1,0 +1,4 @@
+alias dc=docker-compose
+alias dcr="docker-compose run --rm"
+alias docker-clean="docker rm \$(docker ps -a -q) && docker rmi \$(docker images -q --filter 
+"dangling=true")"
