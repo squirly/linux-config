@@ -1,3 +1,5 @@
+Xft.dpi: 180
+
 XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
 XTerm*faceName: Liberation Mono
 XTerm*faceSize: 11
