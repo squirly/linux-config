@@ -1,6 +1,0 @@
-#!/bin/bash
-
-sudo apt-get update
-sudo apt-get install git ubuntu-restricted-extras xterm synapse parcellite xmonad xmobar
-
-# http://www.jetbrains.com/idea/download/

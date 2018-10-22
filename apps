@@ -1,0 +1,12 @@
+#!/bin/bash
+
+yay google-chrome xterm clipit vscode opensnitch jdk pinta
+
+# http://www.jetbrains.com/idea/download/
+
+# ngrok
+# android-sdk
+# shots
+
+# node
+npm install -g react-devtools jase
