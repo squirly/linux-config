@@ -78,9 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
@@ -110,10 +107,6 @@ function print_date {
 }
 
 PS1="$ORANGE┌───┤$TEAL\$(print_date)$ORANGE├──┤$PS1\$(parse_git_branch)\n$ORANGE└─┤ $NO_COLOUR"
-
-alias git-log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date=relative"
-alias lock="gnome-screensaver-command -l"
-alias git-view="gitg 1> /dev/null 2> /dev/null &"
 
 function refresh() {
   git stash
@@ -150,8 +143,4 @@ function refresh() {
   git stash pop
 }
 
-alias git-fully-merged="git for-each-ref --format='%(refname:short)' refs/remotes/origin --merged=origin/master"
-
-alias git-merged="git for-each-ref --format='%(refname:short)' refs/heads --merged=origin/master"
-
-export PATH=~/bin:./bin:$PATH
+export PATH=~/bin:$PATH

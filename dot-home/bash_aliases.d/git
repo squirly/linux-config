@@ -1,3 +1,7 @@
+alias git-log="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit --date=relative"
+alias git-fully-merged="git for-each-ref --format='%(refname:short)' refs/remotes/origin --merged=origin/master"
+alias git-merged="git for-each-ref --format='%(refname:short)' refs/heads --merged=origin/master"
+
 alias ga="git add -p"
 alias gb="git branch"
 alias gc="git commit"

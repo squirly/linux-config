@@ -4,4 +4,4 @@
 # desired additions                       #
 ###########################################
 
-for file in .bash_aliases.d/*; do source ${file}; done
+for file in "$BASH_SOURCE.d"/*; do source "$file"; done
